@@ -1,7 +1,6 @@
 import React from 'react';
-import { ListItem, ListItemText, InputBase, Checkbox, ListItemSecondaryAction, IconButton } from "@material-ui/core";
-import { DeleteOutlined } from '@material-ui/icons';
-// import { Delete } from '@material-ui/icons';
+import { ListItem, ListItemText, InputBase, Checkbox, ListItemSecondaryAction, IconButton } from "@mui/material";
+import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined';
 
 class Todo extends React.Component {
     constructor(props) {
@@ -69,7 +68,7 @@ class Todo extends React.Component {
 
                 <ListItemSecondaryAction>
                     <IconButton aria-label="Delete Todo" onClick={this.deleteEventHandler}>
-                        <DeleteOutlined />
+                        <DeleteOutlineOutlinedIcon />
                     </IconButton>
                 </ListItemSecondaryAction>
 

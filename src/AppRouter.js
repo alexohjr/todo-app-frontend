@@ -4,7 +4,7 @@ import App from "./App";
 import Login from "./Login";
 import SignUp from "./SignUp";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { Box, Typography } from "@material-ui/core";
+import { Box, Typography } from "@mui/material";
 
 
 function Copyright() {
