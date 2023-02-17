@@ -4,7 +4,7 @@ import { TextField, Paper, Button, Grid } from "@mui/material";
 class AddTodo extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { item: { title: ""} }; // 사용자의 입력을 저장할 오브젝트
+        this.state = { item: { title: "", regDt: ""} }; // 사용자의 입력을 저장할 오브젝트
         this.add = props.add; // props의 함수를 this.add에 연결
     }
 
@@ -17,18 +17,13 @@ class AddTodo extends React.Component {
     }
 
     onButtonClick = () => {
+        let thisItem = this.state.item;
         if(!this.state.item.title) {
             alert("Please, write title");
             return;
         }
 
-        this.state.item.regDt = new Date();
-
-        // this.setState({
-        //     item: {regDt: new Date()}
-        // })
-
-        // this.setState.item.regDt = new Date();
+        thisItem.regDt = new Date();
 
         this.add(this.state.item); // add 함수 사용
         this.setState({
@@ -47,7 +42,7 @@ class AddTodo extends React.Component {
             <Paper style={{margin: 16, padding: 16}}>
                 <Grid container>
                     <Grid xs={11} item style={{paddingRight: 16}}>
-                        <TextField placeholder="Add Todo here" fullWidth onChange={this.onInputChange} value={this.state.item.title} onKeyPress={this.enterKeyEventHandler} />
+                        <TextField placeholder="Add Todo here" fullWidth onChange={this.onInputChange} value={this.state.item.title} onKeyPress={this.enterKeyEventHandler}/>
                     </Grid>
                     <Grid xs={1} md={1} item>
                         <Button fullWidth color="primary" variant="outlined" onClick={this.onButtonClick}>
